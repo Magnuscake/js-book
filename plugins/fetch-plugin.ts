@@ -19,13 +19,8 @@ export const fetchPlugin = (userInput: string) => {
         }
       });
 
-      // hacky workaround for css files
-      build.onLoad({ filter: /.css$/ }, async (args: any) => {
-        const { data, request } = await axios.get(args.path);
-
-        // check if we already fetched this package and if it is in the
-        // cache. If it is return it immediately
-        // args.path seems to be unique
+      // only for caching
+      build.onLoad({ filter: /.*/ }, async (args: any) => {
         const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(
           args.path
         );
@@ -33,6 +28,15 @@ export const fetchPlugin = (userInput: string) => {
         if (cachedResult) {
           return cachedResult;
         }
+      });
+
+      // hacky workaround for css files
+      build.onLoad({ filter: /.css$/ }, async (args: any) => {
+        const { data, request } = await axios.get(args.path);
+
+        // check if we already fetched this package and if it is in the
+        // cache. If it is return it immediately
+        // args.path seems to be unique
 
         const escapedData = data
           .replace(/\n/g, "")
