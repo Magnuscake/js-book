@@ -61,7 +61,6 @@ export const fetchPlugin = (userInput: string) => {
         return result;
       });
       build.onLoad({ filter: /.*/ }, async (args: any) => {
-        // TODO: Some parts hwere are duplicated. DRY them out
         const cachedResult = await fileCache.getItem<esbuild.OnLoadResult>(
           args.path
         );
