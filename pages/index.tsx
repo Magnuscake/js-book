@@ -1,7 +1,10 @@
-import * as esbuild from "esbuild-wasm";
 import { useState, useEffect, useRef } from "react";
-import { unpkgPathPlugin } from "../plugins/unpkg-path-plugin";
-import { fetchPlugin } from "../plugins/fetch-plugin";
+import * as esbuild from "esbuild-wasm";
+import "bulmaswatch/superhero/bulmaswatch.min.css";
+
+import CodeEditor from "@components/CodeEditor";
+import { unpkgPathPlugin } from "@plugins/unpkg-path-plugin";
+import { fetchPlugin } from "@plugins/fetch-plugin";
 
 const Home = () => {
   const ref = useRef<any>();
@@ -66,6 +69,10 @@ const Home = () => {
 
   return (
     <div>
+      <CodeEditor
+        onChange={(value) => setInput(value)}
+        initialValue="const a = 1"
+      />
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
