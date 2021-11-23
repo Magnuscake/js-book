@@ -9,10 +9,9 @@
   },
   "dependencies": {
     "@babel/parser": "^7.16.4",
-    "@babel/plugin-transform-typescript": "^7.16.1",
     "@babel/traverse": "^7.16.3",
     "@monaco-editor/react": "3.7.5",
-    "@types/prettier": "^2.4.2",
+    "@types/babel__traverse": "^7.14.2",
     "axios": "^0.24.0",
     "bulmaswatch": "^0.8.1",
     "esbuild-wasm": "0.8.27",
@@ -26,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node": "16.11.7",
+    "@types/prettier": "^2.4.2",
     "@types/react": "17.0.34",
     "eslint": "7",
     "eslint-config-next": "12.0.3",

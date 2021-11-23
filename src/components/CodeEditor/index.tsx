@@ -2,10 +2,9 @@ import { useRef } from "react";
 import MonacoEditor, { EditorDidMount } from "@monaco-editor/react";
 import prettier from "prettier";
 import parser from "prettier/parser-babel";
-import {parse} from "@babel/parser";
+import { parse } from "@babel/parser";
 import traverse from "@babel/traverse";
-import Highlighter from "monaco-jsx-highlighter";
-
+import MonacoJSXHighlighter from "monaco-jsx-highlighter";
 
 interface CodeEditorProps {
   initialValue: string;
@@ -24,9 +23,31 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
     // TODO: Eventually give option of setting tab size
     monacoEditor.getModel()?.updateOptions({ tabSize: 2 });
 
-    const Highlighter = new Highlighter(
-         monaco, babelParse, traverse, getMonacoEditor()
-    )
+    // const babelParse = (code: string) =>
+    //   parse(code, {
+    //     sourceType: "module",
+    //     plugins: ["jsx"],
+    //   });
+
+    // const highlighter = new MonacoJSXHighlighter(
+    //   // @ts-ignore
+    //   window.monaco,
+    //   babelParse,
+    //   traverse,
+    //   monacoEditor
+    // );
+    // // Activate highlighting (debounceTime default: 100ms)
+    // @ts-ignore
+    // highlighter.highLightOnDidChangeModelContent(
+    //   () => {},
+    //   () => {},
+    //   undefined,
+    //   () => {}
+    // );
+    // // Activate JSX commenting
+    //
+    // // @ts-ignore
+    // highlighter.addJSXCommentCommand();
   };
 
   const onFormatClick = () => {
