@@ -22,13 +22,11 @@ const CodeCell = () => {
             onChange={(value) => setInput(value)}
             initialValue="const a = 1"
           />
-          {/*
-        <div>
-          <button onClick={onClick}>Submit</button>
-        </div>
-        */}
         </Resizable>
         <CodePreview bundledCode={code} />
+      </div>
+      <div>
+        <button onClick={onClick}>Submit</button>
       </div>
     </Resizable>
   );
