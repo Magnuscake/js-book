@@ -31,13 +31,13 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
 
     // const highlighter = new MonacoJSXHighlighter(
     //   // @ts-ignore
-    //   window.monaco,
+    //   monaco,
     //   babelParse,
     //   traverse,
     //   monacoEditor
     // );
     // // Activate highlighting (debounceTime default: 100ms)
-    // @ts-ignore
+    // // @ts-ignore
     // highlighter.highLightOnDidChangeModelContent(
     //   () => {},
     //   () => {},
@@ -81,7 +81,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
         value={initialValue}
         language="javascript"
         theme="dark"
-        height="500px"
+        height="100%"
         options={{
           wordWrap: "on",
           minimap: { enabled: false },

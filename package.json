@@ -12,6 +12,7 @@
     "@babel/traverse": "^7.16.3",
     "@monaco-editor/react": "3.7.5",
     "@types/babel__traverse": "^7.14.2",
+    "@types/react-resizable": "^1.7.4",
     "axios": "^0.24.0",
     "bulmaswatch": "^0.8.1",
     "esbuild-wasm": "0.8.27",
@@ -21,7 +22,8 @@
     "next": "12.0.3",
     "prettier": "^2.4.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-resizable": "^3.0.4"
   },
   "devDependencies": {
     "@types/node": "16.11.7",
