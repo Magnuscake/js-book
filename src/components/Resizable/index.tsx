@@ -10,6 +10,9 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
   const [windowHeight, setWindowHeight] = useState(0);
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    setWindowHeight(window.innerHeight);
+
     let timer: any;
 
     const eveListner = () => {
