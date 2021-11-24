@@ -31,7 +31,9 @@ const CodePreview: React.FC<PreviewProps> = ({ bundledCode }) => {
     // reset the iframe document after each execution. This is to prevent the
     // application from crashing due to document.body.innerHTML = '';
     iframeRef.current.srcdoc = html;
-    iframeRef.current.contentWindow.postMessage(bundledCode, "*");
+    setTimeout(() => {
+      iframeRef.current.contentWindow.postMessage(bundledCode, "*");
+    }, 50);
   }, [bundledCode]);
 
   return (
